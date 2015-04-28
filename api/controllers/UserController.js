@@ -12,9 +12,8 @@
 module.exports = {
     showUsers : function(req, res) {
         User.find().exec(function(err, users) {
-            sails.log.error("ADHFASDKFAKLSDFJASKLDFJALSKDJFAKLSDJFAKLSDJFALSKDJFALKSJDFASJDKLFASD");
             if(err) {
-                sails.log.error("WTF");
+                sails.log.error("err getting users");
                 return res.send(400);
             } else {
                 return res.view("users", { users : users });

@@ -1,3 +1,4 @@
+// jshint node:true
 /**
 * Spot.js
 *
@@ -7,8 +8,9 @@
 
 module.exports = {
 
-  attributes: {
+    migrate : "alter",
 
-  }
+    attributes: {
+
+    }
 };
-

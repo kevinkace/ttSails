@@ -8,20 +8,22 @@
 
 module.exports = {
 
-  attributes: {
-    trick : {
-        type : "int",
-        required : true
-    },
-    stance : {
-        type     : "string",
-        required : true,
-        enum : [
-            "regular",
-            "switch",
-            "fakie",
-            "nollie"
-        ]
+    migrate : "alter",
+
+    attributes: {
+        trick : {
+            type     : "int",
+            required : true
+        },
+        stance : {
+            type     : "string",
+            required : true,
+            enum : [
+                "regular",
+                "switch",
+                "fakie",
+                "nollie"
+            ]
+        }
     }
-  }
 };

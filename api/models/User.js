@@ -8,6 +8,8 @@
 
 module.exports = {
 
+    migrate : "alter",
+
     attributes: {
         email : {
             type : "email",

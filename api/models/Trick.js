@@ -8,7 +8,9 @@
 
 module.exports = {
 
-   attributes : {
+    migrate : "alter",
+
+    attributes : {
         name : {
             type     : "string",
             required : true,
