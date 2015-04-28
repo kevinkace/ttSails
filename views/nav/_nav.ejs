@@ -1,0 +1,9 @@
+<ul class="nav actionNav pure-g">
+<% _.each(navItems, function(ni) { %>
+    <li class="pure-u-1-<%= navItems.length %>">
+        <button class="pure-button" data-href="<%- ni.href %>">
+            <%= i18n(ni.name) %>
+        </button>
+    </li>
+<% }); %>
+</ul>

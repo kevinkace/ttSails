@@ -4,7 +4,7 @@
 <table class="pure-table">
 <thead>
     <tr>
-    <% _.each([ i18n("trick") ], function(th) { %>
+    <% _.each([ i18n("user"), i18n("trick"), i18n("spot") ], function(th) { %>
         <th><%= th %></th>
     <% }); %>
     </tr>
@@ -12,8 +12,12 @@
 <tbody>
     <% _.each(tricks, function(trick) { %>
     <tr>
+        <td><%= trick.user %></td>
         <td><%= trick.name %></td>
+        <td><%= trick.spot %></td>
     </tr>
     <% }); %>
 </tbody>
 </table>
+
+<%- partial ("./nav/_nav") %>

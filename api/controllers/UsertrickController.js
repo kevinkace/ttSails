@@ -1,3 +1,5 @@
+//jshint node:true
+"use strict";
 /**
  * UsertrickController
  *
@@ -6,6 +8,5 @@
  */
 
 module.exports = {
-	
-};
 
+};

@@ -9,14 +9,34 @@
 
 module.exports =  {
     home : function(req, res) {
-        return res.view("homepage", { tricks :
-                [{
-                    name : "trick 1"
-                }, {
-                    name : "ollie"
-                }, {
-                    name: "shove-it"
-                }]
-            });
-        }
+        return res.view("homepage", 
+            {
+                tricks : [
+                    {
+                        user : "kevinkace",
+                        name : "trick 1",
+                        spot : "location"
+                    }, {
+                        user : "kevinkace",
+                        name : "ollie",
+                        spot : "location"
+                    }, {
+                        user : "kevinkace",
+                        name: "shove-it",
+                        spot : "location"
+                    }
+                ],
+                navItems : [
+                    {
+                        name : "add trick",
+                        href : "/trick/add"
+                    }, {
+                        name : "add spot",
+                        href : "/spot/add"
+                    }
+                ]
+            }
+        );
+    }
+
 };
