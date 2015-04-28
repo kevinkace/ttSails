@@ -24,6 +24,10 @@ module.exports = {
                 "fakie",
                 "nollie"
             ]
+        },
+        users : {
+            collection : "user",
+            via        : "usertricks"
         }
     }
 };

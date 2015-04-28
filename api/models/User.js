@@ -20,6 +20,11 @@ module.exports = {
             required : true,
             unique : true,
             size : 24
+        },
+        usertricks : {
+            collection : "usertrick",
+            via        : "users",
+            dominant   : true
         }
     }
 };
