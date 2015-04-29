@@ -1,4 +1,5 @@
 // jshint node:true
+"use strict";
 /**
  * TrickController
  *
@@ -7,7 +8,12 @@
  */
 
 module.exports = {
-    // addTrick : function(req, res) {
-        
-    // }
+    tricks : function(req, res) {
+        return res.view("tricks");
+    },
+    addTrick : function(req, res) {
+        var trick = {};
+
+        return res.view("trick/add", { trick : trick });
+    }
 };

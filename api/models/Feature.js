@@ -25,7 +25,8 @@ module.exports = {
                 "hand-rail",
                 "down-bar",
                 "hubba",
-                "manny-pad"
+                "manny-pad",
+                "hip"
             ]
         },
         spotfeatures : {

@@ -1,4 +1,5 @@
 // jshint node:true
+"use strict";
 /**
 * Usertrick.js
 *
@@ -6,26 +7,24 @@
 * @docs        :: http://sailsjs.org/#!documentation/models
 */
 
+var stance = require("./Stance");
+
 module.exports = {
 
     migrate : "alter",
 
     attributes: {
         trick : {
-            type     : "int",
-            required : true
+            required : true,
+            model    : "trick"
         },
         stance : {
-            type     : "string",
             required : true,
-            enum : [
-                "regular",
-                "switch",
-                "fakie",
-                "nollie"
-            ]
+            type     : "string",
+            enum     : stance
         },
         users : {
+            required   : true,
             collection : "user",
             via        : "usertricks"
         },

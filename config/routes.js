@@ -25,18 +25,6 @@ module.exports.routes = {
 
   /***************************************************************************
   *                                                                          *
-  * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
-  * etc. depending on your default view engine) your home page.              *
-  *                                                                          *
-  * (Alternatively, remove this and add an `index.html` file in your         *
-  * `assets` directory)                                                      *
-  *                                                                          *
-  ***************************************************************************/
-
-   "/": "pages/home.home",
-
-  /***************************************************************************
-  *                                                                          *
   * Custom routes here...                                                    *
   *                                                                          *
   *  If a request to a URL doesn't match any of the custom routes above, it  *
@@ -45,6 +33,16 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-   "/users" : "UserController.showUsers"
+    "/" : "pages/home.home",
+
+    "get  /users" : "UserController.users",
+
+    "get  /tricks"     : "TrickController.tricks",
+    "get  /tricks/add" : "TrickController.addTrickForm",
+    "post /tricks/add" : "TrickController.addTrickPost",
+
+    "get  /usertricks"     : "UsertrickController.usertricks",
+    "get  /usertricks/add" : "UsertrickController.addUsertrickForm",
+    "post /usertricks/add" : "UsertrickController.addUsertrickPost"
 
 };

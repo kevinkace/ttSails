@@ -10,13 +10,15 @@
 
 
 module.exports = {
-    showUsers : function(req, res) {
+    users : function(req, res) {
+        var r;
         User.find().exec(function(err, users) {
             if(err) {
                 sails.log.error("err getting users");
                 return res.send(400);
             } else {
-                return res.view("users", { users : users });
+                r.users = users;
+                return res.view("users", r);
             }
         });
     }
