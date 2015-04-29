@@ -12,19 +12,26 @@ module.exports = {
 
     attributes: {
         email : {
-            type : "email",
+            type     : "email",
             required : true
         },
         username : {
-            type : "string",
+            type     : "string",
             required : true,
-            unique : true,
-            size : 24
+            unique   : true,
+            size     : 24
+        },
+        stance : {
+            type : "string",
+            enum : [ "regular", "goofy" ]
         },
         usertricks : {
             collection : "usertrick",
-            via        : "users",
-            dominant   : true
+            via        : "users"
+        },
+        lines : {
+            collection : "line",
+            via        : "users"
         }
     }
 };

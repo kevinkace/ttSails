@@ -1,4 +1,5 @@
 //jshint node:true
+"use strict";
 /**
 * Feature.js
 *
@@ -19,8 +20,17 @@ module.exports = {
                 "quarter-pipe",
                 "bank",
                 "bump-to-bump",
-                "euro"
+                "euro",
+                "ledge",
+                "hand-rail",
+                "down-bar",
+                "hubba",
+                "manny-pad"
             ]
+        },
+        spotfeatures : {
+            collection : "spotfeature",
+            via        : "feature"
         }
     }
 };

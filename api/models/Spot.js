@@ -1,4 +1,5 @@
 // jshint node:true
+"use strict";
 /**
 * Spot.js
 *
@@ -10,7 +11,17 @@ module.exports = {
 
     migrate : "alter",
 
-    attributes: {
-
+    attributes : {
+        name : {
+            type     : "string",
+            required : true
+        },
+        features : {
+            collection : "spotfeature",
+            via        : "spot"
+        },
+        coords : {
+            type : "array"
+        }
     }
 };

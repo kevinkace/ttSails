@@ -28,6 +28,12 @@ module.exports = {
         users : {
             collection : "user",
             via        : "usertricks"
+        },
+        line : {
+            model : "line"
+        },
+        quality : {
+            type : "integer"
         }
     }
 };
