@@ -35,14 +35,14 @@ module.exports.routes = {
 
     "/" : "pages/home.home",
 
-    "get  /users" : "UserController.users",
+    "get  /users" : "UserController.all",
 
-    "get  /tricks"     : "TrickController.tricks",
-    "get  /tricks/add" : "TrickController.addTrickForm",
-    "post /tricks/add" : "TrickController.addTrickPost",
+    "get  /tricks"     : "TrickController.all",
+    "get  /tricks/add" : "TrickController.addForm",
+    "post /tricks/add" : "TrickController.addPost",
 
-    "get  /usertricks"     : "UsertrickController.usertricks",
-    "get  /usertricks/add" : "UsertrickController.addUsertrickForm",
-    "post /usertricks/add" : "UsertrickController.addUsertrickPost"
+    "get  /usertricks"     : "UsertrickController.all",
+    "get  /usertricks/add" : "UsertrickController.addForm",
+    "post /usertricks/add" : "UsertrickController.addPost"
 
 };

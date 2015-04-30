@@ -8,12 +8,13 @@
  */
 
 module.exports = {
-    tricks : function(req, res) {
-        return res.view("tricks");
+    all : function(req, res) {
+        return res.view("trick/all");
     },
-    addTrick : function(req, res) {
-        var trick = {};
-
-        return res.view("trick/add", { trick : trick });
+    addForm : function(req, res) {
+        return res.view("trick/add");
+    },
+    addPost : function(req, res) {
+        return res.badrequest("You shouldnt' reach this point.");
     }
 };

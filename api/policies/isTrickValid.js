@@ -5,6 +5,7 @@ module.exports = function isTrickValid(req, res, next) {
 
     // Todo: everything
     sails.log("trick be valid");
+    sails.log(JSON.stringify(req.params));
 
     next();
 };

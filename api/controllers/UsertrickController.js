@@ -10,11 +10,13 @@
 var stance = require("./../models/Stance");
 
 module.exports = {
-    addTrick : function(req, res) {
-        return res.view("user/tricks");
+    all : function(req, res) {
+        return res.view("usertrick/all")
     },
-    addTrickForm : function(req, res) {
-        return res.view("usertrick/addTrickForm", { stance : stance });
+    addForm : function(req, res) {
+        return res.view("usertrick/add", { stance : stance });
+    },
+    addPost : function(req, res) {
+        return res.badrequest("You shouldn't reach this point.");
     }
-
 };

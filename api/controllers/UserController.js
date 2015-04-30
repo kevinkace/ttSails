@@ -10,8 +10,8 @@
 
 
 module.exports = {
-    users : function(req, res) {
-        var r;
+    all : function(req, res) {
+        var r = {};
         User.find().exec(function(err, users) {
             if(err) {
                 sails.log.error("err getting users");
