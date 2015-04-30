@@ -3,9 +3,10 @@
 "use strict";
 
 module.exports = function isAuth(req, res, next) {
-    if(true) {
-        sails.log("authed");
-        return next();
+
+    if(false) {
+        return res.forbidden("No isAuth()");
     }
-    return res.forbidden("No isAuth()");
+    sails.log("authed");
+    next();
 };

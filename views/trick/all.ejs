@@ -1,3 +1,22 @@
-v/trick/all.ejs
+<!-- trick -->
+<h1><%= __('Tricks') %></h1>
 
-show all tricks
+<table class="pure-table">
+<% var cols = [ "name", "components", "alias" ]; %>
+<thead>
+    <tr>
+    <% _.each(cols, function(col) { %>
+        <th><%= col %></th>
+    <% }); %>
+    </tr>
+</thead>
+<tbody>
+    <% _.each(res.trick, function(trick) { %>
+    <tr>
+    <% _.each(cols, function(col) { %>
+        <td><%= i18n(trick.col) %>
+    <% }); %>
+    </tr>
+    <% }); %>
+</tbody>
+</table>

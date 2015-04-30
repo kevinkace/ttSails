@@ -15,6 +15,12 @@ module.exports = {
             type     : "string",
             required : true,
             unique   : true
+        },
+        components : {
+            collection : "trick"
+        },
+        alias : {
+            type : "array"
         }
    }
 

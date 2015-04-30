@@ -1,5 +1,6 @@
 // jshint node:true
 "use strict";
+/* global Trick, sails */
 /**
  * TrickController
  *
@@ -8,13 +9,26 @@
  */
 
 module.exports = {
+
     all : function(req, res) {
-        return res.view("trick/all");
+        Trick.find().exec(function(err, tricks) {
+            if(err) {
+                sails.log.error("err getting tricks");
+
+                return res.send(400);
+            }
+
+            res.tricks = tricks;
+            return res.view("trick/all");
+        });
     },
+
     addForm : function(req, res) {
         return res.view("trick/add");
     },
+
     addPost : function(req, res) {
-        return res.badrequest("You shouldnt' reach this point.");
+        return res.badRequest("You shouldn't reach this point.");
     }
+
 };

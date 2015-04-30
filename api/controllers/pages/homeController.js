@@ -9,7 +9,7 @@
 
 module.exports =  {
     home : function(req, res) {
-        return res.view("homepage", 
+        return res.view("homepage",
             {
                 tricks : [
                     {

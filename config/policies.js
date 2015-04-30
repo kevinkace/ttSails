@@ -54,7 +54,7 @@ module.exports.policies = {
         "*"     : false,
         all     : true,
         addForm : [ "isAuth" ],
-        addPost : [ "isAuth", "isTrickValid" ]
+        addPost : [ "log", "isAuth", "isTrickValid" ]
     },
 
     UsertrickController : {

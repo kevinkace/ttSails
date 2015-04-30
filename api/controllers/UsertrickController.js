@@ -11,12 +11,12 @@ var stance = require("./../models/Stance");
 
 module.exports = {
     all : function(req, res) {
-        return res.view("usertrick/all")
+        return res.view("usertrick/all");
     },
     addForm : function(req, res) {
         return res.view("usertrick/add", { stance : stance });
     },
     addPost : function(req, res) {
-        return res.badrequest("You shouldn't reach this point.");
+        return res.badRequest("You shouldn't reach this point.");
     }
 };
