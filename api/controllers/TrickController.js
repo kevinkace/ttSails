@@ -13,13 +13,41 @@ module.exports = {
     all : function(req, res) {
         Trick.find().exec(function(err, tricks) {
             if(err) {
-                sails.log.error("err getting tricks");
-
-                return res.send(400);
+                return res.negotiate(err);
             }
 
             res.tricks = tricks;
             return res.view("trick/all");
+        });
+    },
+
+    one : function(req, res) {
+        Trick.find().exec(function(err, one) {
+            if(err) {
+                return res.negotiate(err);
+            }
+
+            return res.view("trick/one", one);
+        });
+    },
+
+    editForm : function(req, res) {
+        Trick.find().exec(function findCB(err, one) {
+            if(err) {
+                return res.negotiate(err);
+            }
+
+            return res.view("trick/edit", one);
+        });
+    },
+
+    editPost : function(req, res) {
+        Trick.update().exec(function updateCB(err, updated) {
+            if(err) {
+                return res.negotiate(err);
+            }
+
+            return res.view("trick/one", updated);
         });
     },
 
@@ -28,33 +56,35 @@ module.exports = {
     },
 
     addPost : function(req, res) {
-        var trick = {
-                name : req.params.all("name")
-            };
+        var trick = req.params.all("name");
 
-        if(req.params.all("components")) {
-            trick.components : req.params.all("components")
-        }
+        // if(req.params.all("components")) {
+        //     trick.components = req.params.all("components");
+        // }
 
-        if(req.params.all("alias")) {
-            trick.alias : req.params.all("alias")
-        }
+        // if(req.params.all("alias")) {
+        //     trick.alias = req.params.all("alias");
+        // }
+
+        sails.log(JSON.stringify(trick));
 
         Trick.create(trick).exec(function createCB(err, created) {
             if(err) {
-                return res.view("trick/add", { err : err });
+                return res.negotiate(err);
             }
+
+            sails.log("trick added?");
 
             Trick.find().exec(function(err, tricks) {
                 if(err) {
                     sails.log.error("err getting tricks");
 
-                    return res.send(400);
+                    return res.negotiate(err);
                 }
 
                 res.tricks = tricks;
-                res.added  = true;
-                return res.view("trick/all");
+                res.trick  = created;
+                return res.view("trick/one");
             });
 
         });

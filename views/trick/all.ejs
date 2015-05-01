@@ -6,21 +6,28 @@
 <% } %>
 
 <table class="pure-table">
+
 <% var cols = [ "name", "components", "alias" ]; %>
 <thead>
     <tr>
     <% _.each(cols, function(col) { %>
         <th><%= col %></th>
     <% }); %>
+        <th><%= i18n("edit") %></th>
     </tr>
 </thead>
+
 <tbody>
-    <% _.each(res.trick, function(trick) { %>
+
+<% _.each(res.tricks, function(trick) { %>
     <tr>
     <% _.each(cols, function(col) { %>
-        <td><%= i18n(trick.col) %>
+        <td><%= trick[col] %></td>
     <% }); %>
+        <td><a href="/trick/<%= trick.id %>"><%= i18n("edit") %></td>
     </tr>
-    <% }); %>
+<% }); %>
+
 </tbody>
+
 </table>

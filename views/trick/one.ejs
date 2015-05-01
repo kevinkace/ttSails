@@ -1,0 +1,17 @@
+<h1><%= i18n(res.trick.name) %></h1>
+
+
+<h2><%= i18n("components") %></h2>
+<ul>
+<% _.each(res.trick.components, function(c) { %>
+    <li><%= i18n("component here") %></li>
+<% }); %>
+</ul>
+
+
+<h2><%= i18n("alias") %></h2>
+<ul>
+<% _.each(res.trick.alias, function(a) { %>
+    <li><%= i18n("alias here") %></li>
+<% }); %>
+</ul>

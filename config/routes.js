@@ -37,9 +37,11 @@ module.exports.routes = {
 
     "get  /users" : "UserController.all",
 
-    "get  /tricks"     : "TrickController.all",
-    "get  /tricks/add" : "TrickController.addForm",
-    "post /tricks/add" : "TrickController.addPost",
+    "get  /tricks"          : "TrickController.all",
+    "get  /tricks/:id"      : "TrickController.one",
+    "get  /tricks/edit/:id" : "TrickController.edit",
+    "get  /tricks/add"      : "TrickController.addForm",
+    "post /tricks/add"      : "TrickController.addPost",
 
     "get  /usertricks"     : "UsertrickController.all",
     "get  /usertricks/add" : "UsertrickController.addForm",

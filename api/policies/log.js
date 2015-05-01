@@ -4,6 +4,6 @@
 
 module.exports = function log(req, res, next) {
     sails.log("log policy!");
-    sails.log(req.param.all("name"));
+    sails.log(req.params.all("name"));
     next();
 };

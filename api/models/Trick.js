@@ -1,4 +1,5 @@
 // jshint node:true
+"use strict";
 /**
 * Trick.js
 *
@@ -10,7 +11,7 @@ module.exports = {
 
     types : {
         charsValid : function(name) {
-            return RegExp("^[a-zA-Z0-9\ ]*$").test(name);
+            return new RegExp("^[a-zA-Z0-9]+[a-zA-Z0-9 -]*[a-z0-9]+$").test(name);
         }
     },
 
@@ -23,9 +24,9 @@ module.exports = {
             unique     : true,
             charsValid : true
         },
-        components : {
-            collection : "trick"
-        },
+        // components : {
+        //     collection : "trick"
+        // },
         alias : {
             type : "array"
         }
