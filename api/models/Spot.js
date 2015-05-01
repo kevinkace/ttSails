@@ -9,6 +9,12 @@
 
 module.exports = {
 
+    types : {
+        isPoint : function(geoLocation) {
+            return geoLocation.x && geoLocation.y;
+        }
+    },
+
     migrate : "alter",
 
     attributes : {
@@ -20,8 +26,9 @@ module.exports = {
             collection : "spotfeature",
             via        : "spot"
         },
-        coords : {
-            type : "array"
+        location : {
+            type : "json",
+            isPoint : true
         }
     }
 };

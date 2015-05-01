@@ -1,6 +1,10 @@
 <!-- trick -->
 <h1><%= __('Tricks') %></h1>
 
+<% if(res.added) { %>
+    <h2><%= i18n("trick added") %></h2>
+<% } %>
+
 <table class="pure-table">
 <% var cols = [ "name", "components", "alias" ]; %>
 <thead>

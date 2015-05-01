@@ -28,7 +28,37 @@ module.exports = {
     },
 
     addPost : function(req, res) {
-        return res.badRequest("You shouldn't reach this point.");
+        var trick = {
+                name : req.params.all("name")
+            };
+
+        if(req.params.all("components")) {
+            trick.components : req.params.all("components")
+        }
+
+        if(req.params.all("alias")) {
+            trick.alias : req.params.all("alias")
+        }
+
+        Trick.create(trick).exec(function createCB(err, created) {
+            if(err) {
+                return res.view("trick/add", { err : err });
+            }
+
+            Trick.find().exec(function(err, tricks) {
+                if(err) {
+                    sails.log.error("err getting tricks");
+
+                    return res.send(400);
+                }
+
+                res.tricks = tricks;
+                res.added  = true;
+                return res.view("trick/all");
+            });
+
+        });
+
     }
 
 };

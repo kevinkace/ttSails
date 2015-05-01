@@ -8,13 +8,20 @@
 
 module.exports = {
 
+    types : {
+        charsValid : function(name) {
+            return RegExp("^[a-zA-Z0-9\ ]*$").test(name);
+        }
+    },
+
     migrate : "alter",
 
     attributes : {
         name : {
-            type     : "string",
-            required : true,
-            unique   : true
+            type       : "string",
+            required   : true,
+            unique     : true,
+            charsValid : true
         },
         components : {
             collection : "trick"
