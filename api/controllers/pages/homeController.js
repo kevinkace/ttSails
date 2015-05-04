@@ -29,10 +29,10 @@ module.exports =  {
                 navItems : [
                     {
                         name : "add trick",
-                        href : "/trick/add"
+                        href : "/tricks/add"
                     }, {
                         name : "add spot",
-                        href : "/spot/add"
+                        href : "/spots/add"
                     }
                 ]
             }

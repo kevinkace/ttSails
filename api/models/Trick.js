@@ -1,4 +1,5 @@
 // jshint node:true
+/* global sails, _ */
 "use strict";
 /**
 * Trick.js
@@ -24,11 +25,12 @@ module.exports = {
             unique     : true,
             charsValid : true
         },
-        // components : {
-        //     collection : "trick"
-        // },
+        aggregates : {
+            collection : "aggregate"
+        },
         alias : {
-            type : "array"
+            type     : "array",
+            nonEmpty : true
         }
    }
 

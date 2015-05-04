@@ -38,10 +38,10 @@ module.exports.routes = {
     "get  /users" : "UserController.all",
 
     "get  /tricks"          : "TrickController.all",
-    "get  /tricks/:id"      : "TrickController.one",
-    "get  /tricks/edit/:id" : "TrickController.edit",
     "get  /tricks/add"      : "TrickController.addForm",
     "post /tricks/add"      : "TrickController.addPost",
+    "get  /tricks/edit/:id" : "TrickController.editForm",
+    "get  /tricks/:id"      : "TrickController.one",
 
     "get  /usertricks"     : "UsertrickController.all",
     "get  /usertricks/add" : "UsertrickController.addForm",

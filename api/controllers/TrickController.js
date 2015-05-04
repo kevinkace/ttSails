@@ -1,6 +1,6 @@
 // jshint node:true
+/* global Trick, sails, _ */
 "use strict";
-/* global Trick, sails */
 /**
  * TrickController
  *
@@ -22,23 +22,21 @@ module.exports = {
     },
 
     one : function(req, res) {
-        Trick.find().exec(function(err, one) {
-            if(err) {
-                return res.negotiate(err);
-            }
 
-            return res.view("trick/one", one);
-        });
+        // if(res.data.length) {
+        //     res.data = _.first(res.data);
+        // }
+        return res.view("trick/one");
     },
 
     editForm : function(req, res) {
-        Trick.find().exec(function findCB(err, one) {
-            if(err) {
-                return res.negotiate(err);
-            }
+        // Trick.find().exec(function findCB(err, one) {
+        //     if(err) {
+        //         return res.negotiate(err);
+        //     }
 
-            return res.view("trick/edit", one);
-        });
+        // });
+        return res.view("trick/edit");
     },
 
     editPost : function(req, res) {
@@ -56,38 +54,7 @@ module.exports = {
     },
 
     addPost : function(req, res) {
-        var trick = req.params.all("name");
-
-        // if(req.params.all("components")) {
-        //     trick.components = req.params.all("components");
-        // }
-
-        // if(req.params.all("alias")) {
-        //     trick.alias = req.params.all("alias");
-        // }
-
-        sails.log(JSON.stringify(trick));
-
-        Trick.create(trick).exec(function createCB(err, created) {
-            if(err) {
-                return res.negotiate(err);
-            }
-
-            sails.log("trick added?");
-
-            Trick.find().exec(function(err, tricks) {
-                if(err) {
-                    sails.log.error("err getting tricks");
-
-                    return res.negotiate(err);
-                }
-
-                res.tricks = tricks;
-                res.trick  = created;
-                return res.view("trick/one");
-            });
-
-        });
+        return res.view("trick/one");
 
     }
 

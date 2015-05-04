@@ -51,18 +51,19 @@ module.exports.policies = {
   // }
 
     TrickController : {
-        "*"     : false,
-        all     : [ "isAuth", "getTrick" ],
-        one     : [ "isAuth", "getTrick" ],
-        edit    : [ "isAuth", "validateTrick", "getTrick", "updateTrick" ],
-        addForm : [ "isAuth" ],
-        addPost : [ "isAuth", "validateTrick" ]
+        // "*"      : false,
+        all      : [ "isAuth", "getTrick" ],
+        one      : [ "isAuth", "getTrick" ],
+        editForm : [ "isAuth", "getTrick" ],
+        editPost : [ "isAuth", "validateTrick", "updateTrick" ],
+        addForm  : [ "isAuth" ],
+        addPost  : [ "isAuth", "validateTrick", "addTrick" ]
     },
 
     UsertrickController : {
         "*"              : false,
-        all     : true,
-        addForm : [ "isAuth" ],
-        addPost : [ "isAuth", "isUsertrickValid" ]
+        all      : true,
+        addForm  : [ "isAuth" ],
+        addPost  : [ "isAuth", "isUsertrickValid" ]
     }
 };

@@ -24,7 +24,7 @@
     <% _.each(cols, function(col) { %>
         <td><%= trick[col] %></td>
     <% }); %>
-        <td><a href="/trick/<%= trick.id %>"><%= i18n("edit") %></td>
+        <td><a href="/tricks/edit/<%= trick.id %>"><%= i18n("edit") %></td>
     </tr>
 <% }); %>
 

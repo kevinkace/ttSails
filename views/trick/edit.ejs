@@ -1,37 +1,63 @@
 <h1><%= i18n("Edit Trick") %></h1>
 
-<form class="pure-form pure-form-stacked" action="/tricks/add" method="post">
+<form class="pure-form pure-form-stacked" action="/tricks/add" method="put">
 
 <fieldset>
 
     <div class="pure-g">
         <div class="pure-u-1">
             <label for="name"><%= i18n("name:") %></label>
-            <input class="pure-u-23-24" type="text" name="name">
+            <input class="pure-u-23-24" type="text" name="name" value="<%= res.data.name %>">
         </div>
     </div>
 
 </fieldset>
 
+
+<legend><%= i18n("Components") %></legend>
+<% _.each(res.data.aggregates, function(aggregate) { %>
+<fieldset>
+
+    <% _.each(aggregate, function(c, idx) { %>
+    <div class="pure-g">
+        <div class="pure-u-1">
+            <label for="aggregates"><%= idx %></label>
+            <input class="pure-u-23-24" type="text" name="aggregates" value="<%= c %>">
+        </div>
+    </div>
+    <% }); %>
+
+</fieldset>
+<% }); %>
 <fieldset>
 
     <div class="pure-g">
         <div class="pure-u-1">
-            <label for="components"><%= i18n("components:") %></label>
-            <input class="pure-u-23-24" type="text" name="components">
+            <label for="aggregates"><%= res.data.aggregates.length + 1 %></label>
+            <input class="pure-u-23-24" type="text" name="aggregate[res.data.aggregates.length][0]" value="">
+            <input class="pure-u-23-24" type="text" name="aggregates[res.data.aggregates.length][1]" value="">
         </div>
     </div>
 
 </fieldset>
 
+
 <fieldset>
 
+<legend><%= i18n("Alias") %></legend>
+<% _.each(res.data.alias, function(a) { %>
     <div class="pure-g">
         <div class="pure-u-1">
-            <label for="alias"><%= i18n("alias:") %></label>
-            <input class="pure-u-23-24" type="text" name="alias">
+            <input class="pure-u-23-24" type="text" name="alias" value="<%= a %>">
         </div>
     </div>
+<% }); %>
+
+<div class="pure-g">
+    <div class="pure-u-1">
+        <input class="pure-u-23-24" type="text" name="alias" value="">
+    </div>
+</div>
 
 </fieldset>
 
