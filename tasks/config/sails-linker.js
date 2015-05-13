@@ -22,9 +22,9 @@ module.exports = function(grunt) {
 				appRoot: '.tmp/public'
 			},
 			files: {
-				'.tmp/public/**/*.html': require('../pipeline').jsFilesToInject,
-				'views/**/*.html': require('../pipeline').jsFilesToInject,
-				'views/**/*.ejs': require('../pipeline').jsFilesToInject
+				'.tmp/public/**/*.html': ['.tmp/public/browserify/debug.js'],
+				'views/**/*.html': ['.tmp/public/browserify/debug.js'],
+				'views/**/*.ejs': ['.tmp/public/browserify/debug.js']
 			}
 		},
 
@@ -37,9 +37,9 @@ module.exports = function(grunt) {
 				relative: true
 			},
 			files: {
-				'.tmp/public/**/*.html': require('../pipeline').jsFilesToInject,
-				'views/**/*.html': require('../pipeline').jsFilesToInject,
-				'views/**/*.ejs': require('../pipeline').jsFilesToInject
+				'.tmp/public/**/*.html': ['.tmp/public/browserify/debug.js'],
+				'views/**/*.html': ['.tmp/public/browserify/debug.js'],
+				'views/**/*.ejs': ['.tmp/public/browserify/debug.js']
 			}
 		},
 
