@@ -13,6 +13,9 @@ module.exports = {
     types : {
         charsValid : function(name) {
             return new RegExp("^[a-zA-Z0-9]+[a-zA-Z0-9 -]*[a-z0-9]+$").test(name);
+        },
+        aliasValid : function(alias) {
+            return true;
         }
     },
 
@@ -29,8 +32,8 @@ module.exports = {
             collection : "aggregate"
         },
         alias : {
-            type     : "array",
-            nonEmpty : true
+            type       : "array",
+            aliasValid : true
         }
    }
 
