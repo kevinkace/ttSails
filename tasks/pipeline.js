@@ -10,6 +10,7 @@
 
 
 
+var browserifyMainFile = '.tmp/public/js/app.js';
 // CSS files to inject in order
 //
 // (if you're using LESS with the built-in default config, you'll want
@@ -64,3 +65,4 @@ module.exports.jsFilesToInject = jsFilesToInject.map(function(path) {
 module.exports.templateFilesToInject = templateFilesToInject.map(function(path) {
   return 'assets/' + path;
 });
+module.exports.browserifyMainFile = browserifyMainFile;
