@@ -1,5 +1,26 @@
-var thing   = require("./thing"),
-    mithril = require("../js/dependencies/mithril/mithril.js");
+var mithril = require("./dependencies/mithril/mithril.js"),
+    Trick   = require("./app/Trick.js"),
+    tricks  = {};
 
-console.log(thing("the letter asdfr"));
-console.log("more and msdfasdfsdfresdf");
+tricks.Trick = Trick;
+
+tricks.vm = {
+    init : function() {
+        //get list of tricks
+        tricks.vm.list = [];
+
+        tricks.vm.add = function(data) {
+            if(data.name) {
+                todo.vm
+            }
+        }
+    }
+}
+var AddTrick = {
+    controller : function() {
+
+    },
+    view : function(ctrl) {
+
+    }
+}

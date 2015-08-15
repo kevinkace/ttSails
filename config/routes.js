@@ -23,25 +23,30 @@
 
 module.exports.routes = {
 
-  /***************************************************************************
-  *                                                                          *
-  * Custom routes here...                                                    *
-  *                                                                          *
-  *  If a request to a URL doesn't match any of the custom routes above, it  *
-  * is matched against Sails route blueprints. See `config/blueprints.js`    *
-  * for configuration options and examples.                                  *
-  *                                                                          *
-  ***************************************************************************/
+    /***************************************************************************
+    *                                                                          *
+    * Custom routes here...                                                    *
+    *                                                                          *
+    *  If a request to a URL doesn't match any of the custom routes above, it  *
+    * is matched against Sails route blueprints. See `config/blueprints.js`    *
+    * for configuration options and examples.                                  *
+    *                                                                          *
+    ***************************************************************************/
+
+    "post /api/:version/tricks/add" : "TricksController.add",
+    "get  /api/:version/tricks"     : "TricksController.get",
+    "get  /api/:version/tricks/:id" : "TricksController.get",
+
 
     "/" : "pages/home.home",
 
-    "get  /users" : "UserController.all",
+    // "get  /users" : "UserController.all",
 
-    "get  /tricks"          : "TrickController.all",
-    "get  /tricks/add"      : "TrickController.addForm",
-    "post /tricks/add"      : "TrickController.addPost",
-    "get  /tricks/edit/:id" : "TrickController.editForm",
-    "get  /tricks/:id"      : "TrickController.one",
+    // "get  /tricks"          : "TrickController.all",
+    // "get  /tricks/add"      : "TrickController.addForm",
+    // "post /tricks/add"      : "TrickController.addPost",
+    // "get  /tricks/edit/:id" : "TrickController.editForm",
+    // "get  /tricks/:id"      : "TrickController.one",
 
     "get  /usertricks"     : "UsertrickController.all",
     "get  /usertricks/add" : "UsertrickController.addForm",

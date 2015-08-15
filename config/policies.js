@@ -20,22 +20,22 @@
 
 module.exports.policies = {
 
-  /***************************************************************************
-  *                                                                          *
-  * Default policy for all controllers and actions (`true` allows public     *
-  * access)                                                                  *
-  *                                                                          *
-  ***************************************************************************/
+    /***************************************************************************
+    *                                                                          *
+    * Default policy for all controllers and actions (`true` allows public     *
+    * access)                                                                  *
+    *                                                                          *
+    ***************************************************************************/
 
-  // '*': true,
+    // '*': true,
 
-  /***************************************************************************
-  *                                                                          *
-  * Here's an example of mapping some policies to run before a controller    *
-  * and its actions                                                          *
-  *                                                                          *
-  ***************************************************************************/
-  // RabbitController: {
+    /***************************************************************************
+    *                                                                          *
+    * Here's an example of mapping some policies to run before a controller    *
+    * and its actions                                                          *
+    *                                                                          *
+    ***************************************************************************/
+    // RabbitController: {
 
     // Apply the `false` policy as the default for all of RabbitController's actions
     // (`false` prevents all access, which ensures that nothing bad happens to our rabbits)
@@ -51,13 +51,16 @@ module.exports.policies = {
   // }
 
     TrickController : {
+        add : [ "isAuth", "params", "addTrick" ],
+        get : [ "isAuth", "params", "getTrick" ]
         // "*"      : false,
-        all      : [ "isAuth", "getTrick" ],
-        one      : [ "isAuth", "getTrick" ],
-        editForm : [ "isAuth", "getTrick" ],
-        editPost : [ "isAuth", "validateTrick", "updateTrick" ],
-        addForm  : [ "isAuth" ],
-        addPost  : [ "isAuth", "validateTrick", "addTrick" ]
+        // api      : [ "isAuth", "getTrick" ],
+        // all      : [ "isAuth", "getTrick" ],
+        // one      : [ "isAuth", "getTrick" ],
+        // editForm : [ "isAuth", "getTrick" ],
+        // editPost : [ "isAuth", "validateTrick", "updateTrick" ],
+        // addForm  : [ "isAuth" ],
+        // addPost  : [ "isAuth", "validateTrick", "addTrick" ]
     },
 
     UsertrickController : {

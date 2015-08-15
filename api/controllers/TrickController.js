@@ -10,6 +10,16 @@
 
 module.exports = {
 
+    add : function(req, res) {
+        return res.json({
+            test : "cleaning up rouuutes"
+        });
+    },
+
+    api : function(req, res) {
+        return res.json({test : "yup"});
+    },
+
     all : function(req, res) {
         Trick.find().exec(function(err, tricks) {
             if(err) {
