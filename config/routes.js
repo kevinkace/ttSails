@@ -33,9 +33,12 @@ module.exports.routes = {
     *                                                                          *
     ***************************************************************************/
 
-    "post /api/:version/tricks/add" : "TricksController.add",
-    "get  /api/:version/tricks"     : "TricksController.get",
-    "get  /api/:version/tricks/:id" : "TricksController.get",
+    "get /api"          : { view : "pages/api" },
+    "get /api/:version" : { view : "pages/api-version" },
+
+    "post /api/:version/tricks/add" : "TrickController.add",
+    "get  /api/:version/tricks"     : "TrickController.get",
+    "get  /api/:version/tricks/:id" : "TrickController.get",
 
 
     "/" : "pages/home.home",

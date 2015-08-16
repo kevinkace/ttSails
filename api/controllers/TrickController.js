@@ -1,5 +1,5 @@
-// jshint node:true
-/* global Trick, sails, _ */
+/*jshint node:true*/
+/*global Trick*/
 "use strict";
 /**
  * TrickController
@@ -12,8 +12,12 @@ module.exports = {
 
     add : function(req, res) {
         return res.json({
-            test : "cleaning up rouuutes"
+            test : "add"
         });
+    },
+
+    get : function(req, res) {
+        return res.send(res.data.trick || res.data.tricks);
     },
 
     api : function(req, res) {

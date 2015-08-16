@@ -1,18 +1,33 @@
+// jshint node:true
+/* global sails */
+
 "use strict";
 
 module.exports = function(req, res, next) {
 
-    if(req.params.ids) {
-        var ids = req.params.ids.split(",");
-        _.set(res, "data.params.ids", ids);
+    sails.log("params");
+
+    res.params = {};
+    res.data = res.data || {};
+
+    if(req.allParams().id === "" || req.allParams().ids === "") {
+        res.badRequest("Id not supplied");
+    }
+
+    if(req.allParams().ids) {
+        // _.set(res, "data.params.ids", ids);
+        res.params = {
+            ids : req.allParams().ids.split(",")
+        };
         next();
     }
 
-    if(req.params.id) {
-        var id = req.params.id;
-        _.set(res, "data.params.ids");
+    if(req.allParams().id) {
+        // _.set(res, "data.params.id", id);
+        res.params = {
+            id : req.allParams().id
+        };
         next();
     }
 
-    next();
-}
+};
