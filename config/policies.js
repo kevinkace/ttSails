@@ -51,9 +51,14 @@ module.exports.policies = {
   // }
 
     TrickController : {
-        add : [ "isAuth", "api", "params", "addTrick" ],
-        get : [ "isAuth", "api", "params", "getTrick" ]
-        // "*"      : false,
+        // create : [ "isAuth" ]
+        // update : [ "isAuth", "updateTrickAliases" ]
+        // get    : [ "isAuth", "api", "getTrickParams", "getTrick" ],
+        // add    : [ "isAuth", "api", "addTrickParams", "addTrick" ],
+        // update : [ "isAuth", "api", "updateTrickParams", "updateTrick" ]
+        // "*"      : true,
+        // all : true
+
         // api      : [ "isAuth", "getTrick" ],
         // all      : [ "isAuth", "getTrick" ],
         // one      : [ "isAuth", "getTrick" ],

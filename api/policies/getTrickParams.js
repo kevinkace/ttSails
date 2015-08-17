@@ -5,13 +5,16 @@
 
 module.exports = function(req, res, next) {
 
-    sails.log("params");
+    sails.log("getTrickParams");
 
     res.params = {};
     res.data = res.data || {};
 
-    if(req.allParams().id === "" || req.allParams().ids === "") {
-        res.badRequest("Id not supplied");
+    if(req.allParams().id === "") {
+        res.badRequest("Id was expected but not provided");
+    }
+    if(req.allParams().ids === "") {
+        res.badRequest("Ids were expected but not provided");
     }
 
     if(req.allParams().ids) {
@@ -19,7 +22,7 @@ module.exports = function(req, res, next) {
         res.params = {
             ids : req.allParams().ids.split(",")
         };
-        next();
+        return next();
     }
 
     if(req.allParams().id) {
@@ -27,7 +30,9 @@ module.exports = function(req, res, next) {
         res.params = {
             id : req.allParams().id
         };
-        next();
+        return next();
     }
+
+    next();
 
 };

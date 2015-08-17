@@ -1,5 +1,5 @@
 // jshint node:true
-/* global sails, _ */
+/* global*/
 "use strict";
 /**
 * Trick.js
@@ -14,8 +14,13 @@ module.exports = {
         charsValid : function(name) {
             return new RegExp("^[a-zA-Z0-9]+[a-zA-Z0-9 -]*[a-z0-9]+$").test(name);
         },
-        aliasValid : function(alias) {
-            return true;
+        rotationValid : function(rotation) {
+            return !(rotation % 180);
+        },
+        aliasesValid : function(aliases) {
+            return Array.isArray(aliases) && !aliases.some(function(alias) {
+                    return !typeof alias === "string";
+                });
         }
     },
 
@@ -28,12 +33,20 @@ module.exports = {
             unique     : true,
             charsValid : true
         },
+        bodyRotation : {
+            type          : "int",
+            rotationValid : true
+        },
+        boardRotation : {
+            type          : "int",
+            rotationValid : true
+        },
         aggregates : {
             collection : "aggregate"
         },
-        alias : {
-            type       : "array",
-            aliasValid : true
+        aliases : {
+            type         : "array",
+            aliasesValid : true
         }
    }
 

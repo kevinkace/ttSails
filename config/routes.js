@@ -33,15 +33,19 @@ module.exports.routes = {
     *                                                                          *
     ***************************************************************************/
 
-    "get /api"          : { view : "pages/api" },
-    "get /api/:version" : { view : "pages/api-version" },
+    // "get /api"          : { view : "pages/api" },
+    // "get /api/:version" : { view : "pages/api-version" },
 
-    "post /api/:version/tricks/add" : "TrickController.add",
-    "get  /api/:version/tricks"     : "TrickController.get",
-    "get  /api/:version/tricks/:id" : "TrickController.get",
+    // "get  /api/:version/tricks"     : "TrickController.get",
+    // "get  /api/:version/tricks/:id" : "TrickController.get",
+    // "post /api/:version/tricks"     : "TrickController.add",
+    // "put  /wpi/:version/tricks"     : "TrickController.update",
+    // "put  /wpi/:version/tricks/:id" : "TrickController.update",
 
 
-    "/" : "pages/home.home",
+    // "/" : "pages/home.home",
+
+    "put /tricks/:id/addAlias" : "TrickController.update"
 
     // "get  /users" : "UserController.all",
 
@@ -51,8 +55,8 @@ module.exports.routes = {
     // "get  /tricks/edit/:id" : "TrickController.editForm",
     // "get  /tricks/:id"      : "TrickController.one",
 
-    "get  /usertricks"     : "UsertrickController.all",
-    "get  /usertricks/add" : "UsertrickController.addForm",
-    "post /usertricks/add" : "UsertrickController.addPost"
+    // "get  /usertricks"     : "UsertrickController.all",
+    // "get  /usertricks/add" : "UsertrickController.addForm",
+    // "post /usertricks/add" : "UsertrickController.addPost"
 
 };

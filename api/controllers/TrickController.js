@@ -5,15 +5,12 @@
  * TrickController
  *
  * @description :: Server-side logic for managing tricks
- * @help        :: See http://links.sailsjs.org/docs/controllers
  */
 
 module.exports = {
 
     add : function(req, res) {
-        return res.json({
-            test : "add"
-        });
+        return res.json(res.data);
     },
 
     get : function(req, res) {
