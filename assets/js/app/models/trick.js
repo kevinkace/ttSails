@@ -12,10 +12,13 @@ module.exports = {
     one : function(id) {
         return m.request({
             method : "GET",
-            url    : "/tricks",
-            body   : JSON.stringify({
-                    id : id
-                })
+            url    : "/tricks/" + id
         });
-    }
+    },
+    headers : [
+        "id",
+        "name",
+        "createdAt",
+        "updatedAt"
+    ]
 };

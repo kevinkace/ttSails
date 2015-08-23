@@ -3,13 +3,15 @@
 "use strict";
 
 var Trick = require("../models/trick.js"),
-    table = require("../helpers/table.js");
+    one   = require("../helpers/one.js");
 
 module.exports = {
     controller : function() {
         var ctrl = {
             tricks : {
-                all : Trick.all()
+                one : function(id) {
+                    return Trick.one(id);
+                }
             }
         };
 
@@ -17,8 +19,8 @@ module.exports = {
     },
     view : function(ctrl) {
         var headers = Trick.headers,
-            tricks  = ctrl.tricks.all();
+            trick   = ctrl.tricks.one(m.route.param("id"));
 
-        return tricks && tricks.length > 0 ? table(tricks, headers) : "No tricks!";
+        return trick ? one(trick, headers) : "No tricks!";
     }
 };
