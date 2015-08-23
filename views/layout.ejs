@@ -1,9 +1,9 @@
-<% if(res.format === "html") { %>
+<% if(!res.wantsJSON) { %>
     <%- partial("./bumpers/_header") %>
 <% } %>
 
 <%- body %>
 
-<% if(res.format === "html") { %>
+<% if(!res.wantsJSON) { %>
     <%- partial("./bumpers/_footer") %>
 <% } %>

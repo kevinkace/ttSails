@@ -1,3 +1,6 @@
+// jshint node:true
+"use strict";
+
 /**
  * Development environment settings
  *
@@ -17,8 +20,8 @@ module.exports = {
    * environment (see config/connections.js and config/models.js )           *
    ***************************************************************************/
 
-  models: {
-    connection: 'ttSailsPostgres'
-  }
+  // models: {
+  //   connection: 'ttSailsPostgres'
+  // }
 
 };

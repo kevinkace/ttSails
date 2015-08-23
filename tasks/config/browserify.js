@@ -1,3 +1,6 @@
+// jshint node:true
+"use strict";
+
 /**
  * Browserify files with React as an option.
  *
@@ -10,18 +13,19 @@
  * For usage docs see:
  *    https://github.com/gruntjs/grunt-browserify
  */
+
 module.exports = function(grunt) {
 
-  grunt.config.set('browserify', {
+  grunt.config.set("browserify", {
     js: {
-      src : require('../pipeline').browserifyMainFile,
-      dest: '.tmp/public/browserify/debug.js'
+        src : require("../pipeline").browserifyMainFile,
+        dest: ".tmp/public/browserify/debug.js"
     }
     // ,
     // options: {
-    //   transform: [require('grunt-react').browserify]
+    //     transform: [require("grunt-react").browserify]
     // }
   });
 
-  grunt.loadNpmTasks('grunt-browserify');
+  grunt.loadNpmTasks("grunt-browserify");
 };

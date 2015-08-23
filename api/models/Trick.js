@@ -1,6 +1,7 @@
 // jshint node:true
 /* global*/
 "use strict";
+
 /**
 * Trick.js
 *
@@ -15,7 +16,7 @@ module.exports = {
             return new RegExp("^[a-zA-Z0-9]+[a-zA-Z0-9 -]*[a-z0-9]+$").test(name);
         },
         rotationValid : function(rotation) {
-            return !(rotation % 180);
+            return rotation % 90 === 0;
         },
         aliasesValid : function(aliases) {
             return Array.isArray(aliases) && !aliases.some(function(alias) {

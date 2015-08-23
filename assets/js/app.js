@@ -1,26 +1,25 @@
-var mithril = require("./dependencies/mithril/mithril.js"),
-    Trick   = require("./app/Trick.js"),
-    tricks  = {};
+//jshint node:true
+"use strict";
 
-tricks.Trick = Trick;
+/* app.js
+ * Are you looking at the right file?!
+ *
+ * /assets/js/app.js <- the real deal
+ *
+ */
 
-tricks.vm = {
-    init : function() {
-        //get list of tricks
-        tricks.vm.list = [];
+var m = window.m = require("./dependencies/mithril/mithril.js"),
+    home         = require("./app/pages/home.js"),
+    addTrick     = require("./app/pages/add-trick.js");
 
-        tricks.vm.add = function(data) {
-            if(data.name) {
-                todo.vm
-            }
-        }
+m.route.mode = "pathname";
+
+m.route(document.getElementById("mount"),
+
+
+    "/",
+    {
+        "/"          : home,
+        "/add-trick" : addTrick
     }
-}
-var AddTrick = {
-    controller : function() {
-
-    },
-    view : function(ctrl) {
-
-    }
-}
+);

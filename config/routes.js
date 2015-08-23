@@ -43,7 +43,7 @@ module.exports.routes = {
     // "put  /wpi/:version/tricks/:id" : "TrickController.update",
 
 
-    // "/" : "pages/home.home",
+    "/" : "pages/home.home",
 
     "put /tricks/:id/addAlias" : "TrickController.update"
 

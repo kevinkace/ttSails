@@ -1,10 +1,13 @@
+// jshint node:true
+"use strict";
+
 module.exports = function (grunt) {
-	grunt.registerTask('compileAssets', [
-		'clean:dev',
-		'jst:dev',
-		'less:dev',
-		'copy:dev',
-                'browserify',
-		'coffee:dev'
-	]);
+    grunt.registerTask("compileAssets", [
+        "clean:dev",
+        "jst:dev",
+        "less:dev",
+        "copy:dev",
+        "browserify"
+        // "coffee:dev"
+    ]);
 };
