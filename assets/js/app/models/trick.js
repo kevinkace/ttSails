@@ -9,10 +9,10 @@ module.exports = {
             url    : "/tricks"
         });
     },
-    one : function(id) {
+    one : function() {
         return m.request({
             method : "GET",
-            url    : "/tricks/" + id
+            url    : "/tricks/" + this
         });
     },
     headers : [

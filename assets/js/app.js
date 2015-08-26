@@ -20,8 +20,8 @@ m.route(document.getElementById("mount"),
 
     "/",
     {
-        "/"          : home,
         "/trick/:id" : trick,
-        "/add-trick" : addTrick
+        "/add-trick" : addTrick,
+        "/"          : home
     }
 );
