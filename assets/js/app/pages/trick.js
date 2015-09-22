@@ -9,7 +9,7 @@ module.exports = {
     controller : function() {
         var ctrl = {
             tricks : {
-                one : Trick.one()
+                one : Trick.one
             }
         };
 
@@ -17,7 +17,7 @@ module.exports = {
     },
     view : function(ctrl) {
         var headers = Trick.headers,
-            trick   = ctrl.tricks.one();
+            trick   = ctrl.tricks.one(m.route.param("id"));
 
         return trick ? one(trick, headers) : "No tricks!";
     }
